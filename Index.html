@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Nova Coder - Premium Website Giveaway</title>
+
+<style>
+:root{
+--primary:#b30000;
+--dark:#111;
+--light:#f5f5f5;
+--card:#ffffff;
+--text:#222;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI, sans-serif;}
+
+body{background:var(--light);color:var(--text);}
+
+/* Breaking Bar */
+.breaking{
+background:var(--primary);
+color:#fff;
+padding:8px 0;
+white-space:nowrap;
+overflow:hidden;
+font-weight:600;
+}
+.breaking span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 15s linear infinite;
+}
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+/* Header */
+header{
+background:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+box-shadow:0 3px 15px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+.logo{
+font-size:22px;
+font-weight:bold;
+color:var(--primary);
+}
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+/* Banner */
+.hero{
+position:relative;
+height:380px;
+background:url('https://i.supaimg.com/9ec0882f-b6ce-4a93-a2bd-61aad960c7c2/dcd1280c-7a93-401f-8076-3d5e5ebfb177.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+padding:40px;
+color:#fff;
+}
+.hero::after{
+content:'';
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.65);
+}
+.hero-content{
+position:relative;
+z-index:1;
+max-width:500px;
+}
+.hero h1{font-size:32px;margin-bottom:15px;}
+.btn{
+background:var(--primary);
+color:#fff;
+padding:10px 20px;
+border:none;
+cursor:pointer;
+font-weight:600;
+}
+
+/* Pricing */
+.section{
+padding:40px;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:#fff;
+padding:25px;
+box-shadow:0 5px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+.card:hover{transform:translateY(-6px);}
+.price{
+color:var(--primary);
+font-size:22px;
+margin:10px 0;
+}
+
+/* Modal */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+.modal-content{
+background:#fff;
+padding:30px;
+width:95%;
+max-width:420px;
+border-radius:8px;
+position:relative;
+animation:fade 0.3s ease;
+}
+@keyframes fade{
+from{transform:scale(0.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+.modal-content input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ddd;
+}
+.close{
+position:absolute;
+top:10px;
+right:15px;
+font-size:20px;
+cursor:pointer;
+}
+
+/* Footer */
+footer{
+background:#111;
+color:#aaa;
+padding:40px;
+margin-top:40px;
+}
+footer a{color:#aaa;text-decoration:none;display:block;margin-bottom:8px;}
+footer a:hover{color:#fff;}
+.copy{text-align:center;margin-top:20px;font-size:13px;}
+
+@media(max-width:768px){
+header{padding:15px;}
+.hero{height:300px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="breaking">
+<span>🔥 Premium Website Giveaway Live | ₹499 Subscriber Plan Available | Limited Time Offer</span>
+</div>
+
+<header>
+<div class="logo">Web Nova Coder</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Pricing</a>
+<a href="#">Giveaway</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Win This Premium Promotion Website</h1>
+<p>Professional News-Style Website with Giveaway System & Advanced UI.</p>
+<button class="btn" onclick="scrollToPricing()">View Plans</button>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<h2 style="margin-bottom:20px;">Our Website Packages</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Subscriber Plan</h3>
+<div class="price">₹499</div>
+<p>Fixed Layout, Basic Animation, Mobile Ready.</p>
+<button class="btn" onclick="openForm('Subscriber Plan - ₹499','499')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Basic Plan</h3>
+<div class="price">₹4,999</div>
+<p>Premium Layout, Responsive Design.</p>
+<button class="btn" onclick="openForm('Basic Plan - ₹4,999','4999')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Pro Plan</h3>
+<div class="price">₹8,999</div>
+<p>Theme Switcher, Video Section, Countdown.</p>
+<button class="btn" onclick="openForm('Pro Plan - ₹8,999','8999')">Buy Now</button>
+</div>
+
+<div class="card">
+<h3>Ultra Premium</h3>
+<div class="price">₹14,999</div>
+<p>Full Custom UI, Advanced Animation.</p>
+<button class="btn" onclick="openForm('Ultra Premium - ₹14,999','14999')">Buy Now</button>
+</div>
+
+</div>
+</section>
+
+<!-- Payment Modal -->
+<div class="modal" id="paymentModal">
+<div class="modal-content">
+<span class="close" onclick="closeForm()">&times;</span>
+<h2>Complete Payment</h2>
+
+<img src="https://i.supaimg.com/9ec0882f-b6ce-4a93-a2bd-61aad960c7c2/4400c132-7a93-401f-8076-3d5e5ebfb177.jpg" width="200">
+
+<p><b>Pay via UPI</b></p>
+
+<form onsubmit="sendToWhatsApp(event)">
+<input type="text" id="plan" readonly>
+<input type="hidden" id="amount">
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="tel" id="mobile" placeholder="Mobile Number" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="text" id="transaction" placeholder="Transaction ID" required>
+<button type="submit" class="btn">Submit & Verify</button>
+</form>
+
+<p style="font-size:12px;color:red;margin-top:10px;">
+Manual verification after payment.
+</p>
+</div>
+</div>
+
+<footer>
+<h3>About Web Nova Coder</h3>
+<p>Premium Promotion Website with News-Style Professional Layout.</p>
+<br>
+<a href="https://www.facebook.com/share/1G3ftFfnBm/" target="_blank">Facebook Page</a>
+<div class="copy">© 2026 Web Nova Coder | All Rights Reserved</div>
+</footer>
+
+<script>
+function scrollToPricing(){
+document.getElementById("pricing").scrollIntoView({behavior:"smooth"});
+}
+
+function openForm(plan,price){
+document.getElementById("paymentModal").style.display="flex";
+document.getElementById("plan").value=plan;
+document.getElementById("amount").value=price;
+}
+
+function closeForm(){
+document.getElementById("paymentModal").style.display="none";
+}
+
+function sendToWhatsApp(e){
+e.preventDefault();
+let name=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let email=document.getElementById("email").value;
+let plan=document.getElementById("plan").value;
+let amount=document.getElementById("amount").value;
+let transaction=document.getElementById("transaction").value;
+
+let message=`New Website Purchase
+
+Name: ${name}
+Mobile: ${mobile}
+Email: ${email}
+Plan: ${plan}
+Amount: ₹${amount}
+Transaction ID: ${transaction}`;
+
+let url="https://wa.me/918329331440?text="+encodeURIComponent(message);
+window.open(url,'_blank');
+}
+</script>
+
+</body>
+  </html>
